@@ -3,11 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package br.com.fatecpg.projeto4;
 
 /**
  *
  * @author suporte03
  */
-public class Bandas {
+public class Discos {
     
 }
