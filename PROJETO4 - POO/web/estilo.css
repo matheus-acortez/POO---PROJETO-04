@@ -1,0 +1,33 @@
+.navprincipal{
+    margin-bottom: 10px;
+}
+
+.amort{
+    margin-top: 10px;
+}
+
+.menu{
+    margin-bottom: 10px;
+}
+
+.photo{
+    margin-left: 80px;
+}
+
+.form-band{
+    margin-top: 20px;
+}
+
+.secondline{
+    margin-left: 300px;
+}
+
+.imagens{
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+
+img{
+    width: 225px !important;
+    height: 200px !important;
+}

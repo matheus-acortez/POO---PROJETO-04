@@ -1,0 +1,15 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+<nav class="navbar navbar-dark bg-dark navprincipal">
+     <span class="navbar-text mx-auto">
+        <h3>Cadastro de Músicas  | PROJETO 04 - Grupo 06 - Noturno</h3>
+    </span>
+</nav>
+<div class="row menu">
+    <div class="col-md-12">
+        <a class="btn btn-primary" href="home.jsp" role="button">HOME</a>
+        <a class="btn btn-primary" href="bandas.jsp" role="button">BANDAS</a>
+        <a class="btn btn-primary" href="discos.jsp" role="button">DISCOS</a>
+        <a class="btn btn-primary" href="musicas.jsp" role="button">MÚSICAS</a>
+     </div>
+ </div>
