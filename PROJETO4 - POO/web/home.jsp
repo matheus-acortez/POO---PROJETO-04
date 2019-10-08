@@ -1,3 +1,6 @@
+<%@page import="br.com.fatecpg.projeto4.Musica"%>
+<%@page import="br.com.fatecpg.projeto4.Db"%>
+<%@page import="br.com.fatecpg.projeto4.Banda"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -32,14 +35,13 @@
             <tbody>
         </tbody>
 
-        <%for (int i=0; i<Bandas.getList().size(); i++){%>
-        <%Bandas c= Bandas.getList().get(i);
-        %>
+        <%for (Banda banda : Db.getBanda()){%>
+        
         <tr>
-            <td><%=i+1%></td>
-            <td><%=c.getNome()%></td>
-            <td><%=c.getGenero()%></td>
-            <td><%=c.getPais()%></td>
+            <td><%=Db.getBanda().indexOf(banda)%></td>
+            <td><%=banda.getNome()%></td>
+            <td><%=banda.getGenero()%></td>
+            <td><%=banda.getPais()%></td>
         </tr>
         <%}%>
             </table>

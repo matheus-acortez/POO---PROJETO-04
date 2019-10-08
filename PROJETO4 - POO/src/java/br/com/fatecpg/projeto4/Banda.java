@@ -3,13 +3,17 @@ package br.com.fatecpg.projeto4;
 import java.util.ArrayList;
 import java.net.URL;
 
-public class Bandas {
+public class Banda {
     
     private String nome;
     private String genero;
     private String pais;
-    
- 
+
+    public Banda(String nome, String genero, String pais) {
+        this.nome = nome;
+        this.genero = genero;
+        this.pais = pais;
+    }
     public String getNome(){
         return nome;
     }
