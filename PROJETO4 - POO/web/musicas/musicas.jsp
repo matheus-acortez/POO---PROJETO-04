@@ -29,6 +29,11 @@
                         Db.getMusica().add(new Musica(nome, genero, ano));
                         response.sendRedirect(request.getRequestURI());
                     }
+                    
+                    else if (request.getParameter("remove") !=null){
+                        int i=Integer.parseInt(request.getParameter("index"));
+                        Db.getMusica().remove(i);}
+                    }
                 %>
                
             </div>

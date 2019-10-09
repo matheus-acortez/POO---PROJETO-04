@@ -9,11 +9,6 @@ public class Banda {
     private String genero;
     private String pais;
 
-    public Banda(String nome, String genero, String pais) {
-        this.nome = nome;
-        this.genero = genero;
-        this.pais = pais;
-    }
     public String getNome(){
         return nome;
     }
@@ -37,6 +32,13 @@ public class Banda {
     public void setPais(String pais){
          this.pais = pais;
      }
+    
+    public Banda(String nome, String genero, String pais) {
+        this.nome = nome;
+        this.genero = genero;
+        this.pais = pais;
+    }
+
     
     
 }
