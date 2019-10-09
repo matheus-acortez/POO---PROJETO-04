@@ -50,6 +50,42 @@
         </div>
     </div>
     </div>
+     <div class="card">
+                <div class="card-header" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    <h5 class="mb-0 text-secondary">Musicas 
+                        <span class="float-right"><%=Db.getMusica().size()%></span>
+                    </h5>
+                </div>
+            </div>
+             <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+        <div class="card-body">
+            <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Genêro</th>
+                <th scope="col">Ano</th>
+              </tr>
+            </thead>
+            <tbody>
+        </tbody>
+
+        <%for (Musica musica : Db.getMusica()){%>
+        
+        <tr>
+            <td><%=Db.getMusica().indexOf(musica)%></td>
+            <td><%=musica.getNome()%></td>
+            <td><%=musica.getGenero()%></td>
+            <td><%=musica.getAno()%></td>
+
+        </tr>
+        <%}%>
+            </table>
+        </div>
+    </div>
+    </div>
+    
     
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
