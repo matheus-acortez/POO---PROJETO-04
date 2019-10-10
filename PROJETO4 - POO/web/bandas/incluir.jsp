@@ -26,16 +26,13 @@
                         String ano = request.getParameter("ano");
                         Db.getBanda().add(new Banda(nome, genero, ano));
                         response.sendRedirect(request.getRequestURI());    
-                    }else{
-                     
-                     if (request.getParameter("remover") !=null){
+                        
+                    }else if (request.getParameter("remover") !=null){
                          int i = Integer.parseInt(request.getParameter("index"));
                          Db.getBanda().remove(i);
                          response.sendRedirect(request.getRequestURI());   
                          
-                     } else {
-                         
-                        if (request.getParameter("salvar") != null) { 
+                     } else if (request.getParameter("salvar") != null) { 
                         int index = Integer.parseInt(request.getParameter("index"));
                         String nome = request.getParameter("nome");
                         String genero = request.getParameter("genero");
@@ -43,7 +40,7 @@
                         Db.getBanda().set(index, new Banda(nome, genero, ano));
                         response.sendRedirect(request.getRequestURI()); 
                     
-                    }
+                    
                  }
                           
         
@@ -100,8 +97,8 @@
                         </tr>
 
                 </tr>
-                <%}
-                } else {
+                <%}} 
+                else {
                     for (int i=0; i<Db.getBanda().size(); i++){
                               Banda c = Db.getBanda().get(i);
                                 if(i != Integer.parseInt(request.getParameter("index"))){%>
@@ -138,8 +135,7 @@
                                     </tr>
 
                                 <%}}}%>
-                }%>
-            </table>
+              
                 
                 </tbody>
                 </table>
