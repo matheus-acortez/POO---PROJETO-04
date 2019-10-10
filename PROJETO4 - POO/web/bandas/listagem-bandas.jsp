@@ -44,7 +44,7 @@
                 <%}%>
             </table>
         </div>
-            <a class="btn btn-success" href="../home.jsp" role="button">NOVA BANDA</a>
+            <a class="btn btn-success" href="incluir.jsp" role="button">NOVA BANDA</a>
     </div>
     </div>
 

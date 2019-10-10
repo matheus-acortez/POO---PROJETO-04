@@ -18,21 +18,26 @@
             <div class="card-header">
                 <h4>Cadastro de Bandas</h4>
                 <% 
-                try{
+           
 
-                
-                        if (request.getParameter("cadastrar") != null) {
+                 if (request.getParameter("cadastro") != null) {
                         String nome = request.getParameter("nome");
                         String genero = request.getParameter("genero");
                         String ano = request.getParameter("ano");
                         Db.getBanda().add(new Banda(nome, genero, ano));
-                        response.sendRedirect("incluir.jsp");
-                    }
+                        response.sendRedirect(request.getRequestURI());    
+                }else{
+                     if (request.getParameter("remover")!= null){
+                         int i = Integer.parseInt(request.getParameter("index"));
+                         Db.getBanda().remove(i);
+                         response.sendRedirect(request.getRequestURI());  
+                     }
+                 }
+                 
+
+                          
         
-            }catch(Exception ex){%>
-        <div>O formulário não foi preenchido corretamente. Tente novamente</div>
-        
-    <%}%>
+                %>
     </div>
     <div class="card-body">
         <form class="">
@@ -47,12 +52,12 @@
           <div class="col-sm-3">
             <input type="text" name="genero" class="form-control" id="generoLabel" placeholder="Gênero Musical">
           </div>
-        </div>
-        <input class="btn btn-primary" name="cadastro" type="submit" value="Cadastrar">
+           </div>
+        <input class="btn btn-info" name="cadastro" type="submit" value="Cadastrar">
     </form>      
             <div class="row form-band">
             <div class="col-sm-12 col-md-12">
-                <h4>Lista de Bandas</h4>
+                <h4>Lista de bandas</h4>
                 <table class="table table-striped table-dark">
                 <thead>
                   <tr>
@@ -63,22 +68,31 @@
                 </thead>
                 <tbody>
                 </tbody>
-                
-                <%for (Banda banda : Db.getBanda()){%>
-        
+                <%for (int i=0; i<Db.getBanda().size(); i++){%>
+                  <%Banda c= Db.getBanda().get(i);
+                        %>
                 <tr>
-                    <td><%=Db.getBanda().indexOf(banda)%></td>
-                    <td><%=banda.getNome()%></td>
-                    <td><%=banda.getGenero()%></td>
+                    <td><%=i%></td>
+                    <td><%=c.getNome()%></td>
+                    <td><%=c.getGenero()%></td>
+                    <td>
+                        <form>
+                            <input type="hidden" name="index" value="<%=i%>"/>
+                            <input class="btn btn-danger"  type="submit" name="remover" value="Excluir"/>
+                        </form>
+                        </td>
+                        <td>
+                        <form>
+                            <input type="hidden" name="index" value="<%=i%>"/>
+                            <input class="btn btn-info" type="submit" name="alterar" value="Alterar"/>
+                        </form>
+                        </td>
+                        </tr>
 
                 </tr>
                 <%}%>
-            </table>
-        </div>
-    </div>
-    </div>
-
-                        
+                </table>
+                
                 </tbody>
                 </table>
             </div>
