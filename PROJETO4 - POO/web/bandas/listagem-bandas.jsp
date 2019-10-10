@@ -16,43 +16,12 @@
         <%@include file="../WEB-INF/jspf/header.jspf"%>
             <div class="card">
             <div class="card-header">
-                <h4>Cadastro de Bandas</h4>
-                <% 
-                try{
-
+                <h4>Lista de Bandas</h4>
                 
-                        if (request.getParameter("cadastrar") != null) {
-                        String nome = request.getParameter("nome");
-                        String genero = request.getParameter("genero");
-                        String ano = request.getParameter("ano");
-                        Db.getBanda().add(new Banda(nome, genero, ano));
-                        response.sendRedirect("incluir.jsp");
-                    }
-        
-            }catch(Exception ex){%>
-        <div>O formulário não foi preenchido corretamente. Tente novamente</div>
-        
-    <%}%>
     </div>
     <div class="card-body">
-        <form class="">
-        <div class="form-group row">
-          <label for="nomeLabel" class="col-sm-2 col-form-label">Nome</label>
-          <div class="col-sm-3">
-            <input type="text" name="nome" class="form-control" id="nomeLabel" placeholder="Nome do Disco">
-          </div>
-        </div>
-        <div class="form-group row">
-          <label for="generoLabel" class="col-sm-2 col-form-label">Gênero</label>
-          <div class="col-sm-3">
-            <input type="text" name="genero" class="form-control" id="generoLabel" placeholder="Gênero Musical">
-          </div>
-        </div>
-        <input class="btn btn-primary" name="cadastro" type="submit" value="Cadastrar">
-    </form>      
             <div class="row form-band">
             <div class="col-sm-12 col-md-12">
-                <h4>Lista de Bandas</h4>
                 <table class="table table-striped table-dark">
                 <thead>
                   <tr>
@@ -75,12 +44,14 @@
                 <%}%>
             </table>
         </div>
+            <a class="btn btn-success" href="../home.jsp" role="button">NOVA BANDA</a>
     </div>
     </div>
 
                         
                 </tbody>
                 </table>
+                 
             </div>
         </div>
     </div>

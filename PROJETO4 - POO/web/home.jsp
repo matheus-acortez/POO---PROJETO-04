@@ -30,7 +30,7 @@
                 <th scope="col">#</th>
                 <th scope="col">Nome</th>
                 <th scope="col">Genêro</th>
-                <th scope="col">País</th>
+             
               </tr>
             </thead>
             <tbody>
@@ -42,7 +42,7 @@
             <td><%=Db.getBanda().indexOf(banda)%></td>
             <td><%=banda.getNome()%></td>
             <td><%=banda.getGenero()%></td>
-            <td><%=banda.getPais()%></td>
+   
 
         </tr>
         <%}%>
