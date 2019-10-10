@@ -1,0 +1,9 @@
+<%@ page pageEncoding="UTF-8" %>
+
+<footer class="page-footer font-small dark">
+
+  <div class="footer-copyright text-center py-3">
+      © 2019 - Faculdade de tecnologia de Praia Grande
+  </div
+
+</footer>
