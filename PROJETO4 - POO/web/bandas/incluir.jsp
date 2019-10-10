@@ -8,7 +8,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="estilo.css">
+        <link rel="stylesheet" type="text/css" href="../estilo.css">
         <title>Cadastro de Bandas</title>
     </head>
     <body>
@@ -111,13 +111,13 @@
                                     <td>
                                         <form>
                                             <input type="hidden" name="index" value="<%=i%>"/>
-                                            <input type="submit" name="remover" value="Excluir"/>
+                                            <input class="btn btn-danger" type="submit" name="remover" value="Excluir"/>
                                         </form>
                                     </td>
                                     <td>
                                         <form>
                                             <input type="hidden" name="index" value="<%=i%>"/>
-                                            <input type="submit" name="alterar" value="Alterar"/>
+                                            <input class="btn btn-info" type="submit" name="alterar" value="Alterar"/>
                                         </form>
                                     </td>
                                     </tr>
@@ -130,13 +130,12 @@
                                         <td><input type="text" name="nome"  value="<%=c.getNome()%>"></td>
                                         <td><input type="text" name="genero" value="<%=c.getGenero()%>"></td>
                                         <input type="hidden" name="index" value="<%=i%>"/>
-                                        <td><input type="submit" value="Salvar" name="salvar"</td>
+                                        <td><input class="btn btn-success" type="submit" value="Salvar" name="salvar"</td>
                                         </form>
                                     </tr>
 
                                 <%}}}%>
-              
-                
+            
                 </tbody>
                 </table>
             </div>
