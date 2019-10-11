@@ -26,12 +26,14 @@
                         String nome = request.getParameter("nome");
                         String genero = request.getParameter("genero");
                         String ano = request.getParameter("ano");
-                        Db.getBanda().add(new Banda(nome, genero, ano));
+                        String banda = request.getParameter("banda");
+                        Banda b = new Banda(banda, "", "");
+                        Db.getMusica().add(new Musica(nome, genero, ano, b));
                         response.sendRedirect(request.getRequestURI());    
                         
                     }else if (request.getParameter("remover") !=null){
                          int i = Integer.parseInt(request.getParameter("index"));
-                         Db.getBanda().remove(i);
+                         Db.getMusica().remove(i);
                          response.sendRedirect(request.getRequestURI());   
                          
                      } else if (request.getParameter("salvar") != null) { 
@@ -39,7 +41,9 @@
                         String nome = request.getParameter("nome");
                         String genero = request.getParameter("genero");
                         String ano = request.getParameter("ano");
-                        Db.getBanda().set(index, new Banda(nome, genero, ano));
+                        String banda = request.getParameter("banda");
+                        Banda b = new Banda(banda, "", "");
+                        Db.getMusica().set(index, new Musica(nome, genero, ano, b));
                         response.sendRedirect(request.getRequestURI()); 
                     
                     
@@ -70,13 +74,15 @@
            </div>
             <div class="form-group row">
                     <label for="nome" class="col-sm-1 col-form-label">Banda</label>
-                    <div class="col-sm-3">
+                    <div class="row form-bandas">
+                    <div class="col-sm-12">
                         <select name="banda" class="custom-select" required>
                             <option selected value="-1">Selecione uma banda</option>
                             <%for (Banda banda : Db.getBanda()) {%>
-                            <option value="<%=Db.getBanda().indexOf(banda)%>"><%=banda.getNome()%></option>
+                            <option value="<%=banda.getNome()%>"><%=banda.getNome()%></option>
                             <%}%>
                         </select>
+                    </div>
                     </div>
             </div>
                 
@@ -105,6 +111,7 @@
                     <td><%=c.getNome()%></td>
                     <td><%=c.getGenero()%></td>
                     <td><%=c.getAno()%></td>
+                    <td><%=c.getBanda().getNome()%></td>
                     <td>
                         <form>
                             <input type="hidden" name="index" value="<%=i%>"/>
@@ -131,6 +138,9 @@
                                         <td><%=c.getNome()%></td>
                                         <td><%=c.getGenero()%></td>
                                         <td><%=c.getAno()%></td>
+                                        <td><%=c.getBanda()%></td>
+                                        
+                                        
                                                  
                                     <td>
                                         <form>
@@ -154,6 +164,7 @@
                                         <td><input type="text" name="nome"  value="<%=c.getNome()%>"></td>
                                         <td><input type="text" name="genero" value="<%=c.getGenero()%>"></td>
                                         <td><input type="text" name="genero" value="<%=c.getAno()%>"></td>
+                                        <td><input type="text" name="genero" value="<%=c.getBanda()%>"></td>
                                         <input type="hidden" name="index" value="<%=i%>"/>
                                         <td><input class="btn btn-success" type="submit" value="Salvar" name="salvar"</td>
                                         </form>

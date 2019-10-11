@@ -7,6 +7,7 @@ public class Musica {
     private String nome;
     private String genero;
     private String ano;
+    private Banda banda;
     
     
     
@@ -18,10 +19,11 @@ public class Musica {
         return ano;
     }
    
-    public Musica(String nome, String genero, String ano) {
+    public Musica(String nome, String genero, String ano, Banda banda) {
         this.nome = nome;
         this.genero = genero;
         this.ano = ano;
+        this.banda = banda;
     }
     
      public String getNome() {
@@ -38,6 +40,14 @@ public class Musica {
 
     public void setGenero(String genero) {
         this.genero = genero;
+    }
+    
+     public Banda getBanda() {
+        return banda;
+    }
+
+    public void setBanda(Banda banda) {
+        this.banda = banda;
     }
     
  

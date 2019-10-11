@@ -10,7 +10,7 @@ public class Db {
             banda = new ArrayList<>();
             banda.add(new Banda("Linkin Park", "Rock", "Estados Unidos"));
             banda.add(new Banda("Pink Floyd", "Rock", "Estados Unidos"));
-            banda.add(new Banda("Legião Urbana", "MPB", "Brasil"));
+            banda.add(new Banda("Legiao Urbana", "MPB", "Brasil"));
           
         }
         return banda;
@@ -20,9 +20,12 @@ public class Db {
         public static ArrayList<Musica> getMusica(){
         if (musica == null){
             musica = new ArrayList<>();
-            musica.add(new Musica("In the end", "Rock", "2007"));
-            musica.add(new Musica("Money", "Rock", "2008"));
-            musica.add(new Musica("Tempo Perdido", "MPB", "2008"));
+            Banda b = new Banda("Linkin Park", "", "");
+            musica.add(new Musica("In the end", "Rock", "2007", b));
+            b = new Banda("Pink Floyd", "", "");
+            musica.add(new Musica("Money", "Rock", "2008", b));
+            b = new Banda("Legiao Urbana", "", "");
+            musica.add(new Musica("Tempo Perdido", "MPB", "2008", b));
             
         }
      return musica;
