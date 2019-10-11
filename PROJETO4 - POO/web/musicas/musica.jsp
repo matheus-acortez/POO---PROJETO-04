@@ -37,13 +37,14 @@
                          response.sendRedirect(request.getRequestURI());   
                          
                      } else if (request.getParameter("salvar") != null) { 
+                        
                         int index = Integer.parseInt(request.getParameter("index"));
                         String nome = request.getParameter("nome");
                         String genero = request.getParameter("genero");
                         String ano = request.getParameter("ano");
                         String banda = request.getParameter("banda");
-                        Banda b = new Banda(banda, "", "");
-                        Db.getMusica().set(index, new Musica(nome, genero, ano, b));
+                        Banda c = new Banda(banda, "", "");
+                        Db.getMusica().set(index, new Musica(nome, genero, ano, c));
                         response.sendRedirect(request.getRequestURI()); 
                     
                     
@@ -138,7 +139,7 @@
                                         <td><%=c.getNome()%></td>
                                         <td><%=c.getGenero()%></td>
                                         <td><%=c.getAno()%></td>
-                                        <td><%=c.getBanda()%></td>
+                                        <td><%=c.getBanda().getNome()%></td>
                                         
                                         
                                                  
@@ -163,8 +164,25 @@
                                         <td><%=i+1%></td>
                                         <td><input type="text" name="nome"  value="<%=c.getNome()%>"></td>
                                         <td><input type="text" name="genero" value="<%=c.getGenero()%>"></td>
-                                        <td><input type="text" name="genero" value="<%=c.getAno()%>"></td>
-                                        <td><input type="text" name="genero" value="<%=c.getBanda()%>"></td>
+                                        <td><input type="text" name="ano" value="<%=c.getAno()%>"></td>
+                                 
+                                        <td>
+                                            <select name="banda" class="custom-select" required>
+                                                <option selected value="-1">Selecione uma banda</option>
+                                                <%for (Banda banda : Db.getBanda()){ 
+                                                       if (banda.getNome().equals(c.getBanda().getNome())){%>
+                                                           <option selected="selected" value="<%=banda.getNome()%>"><%=banda.getNome()%></option>
+                                                       <%}else{%>
+                                                            <option value="<%=banda.getNome()%>"><%=banda.getNome()%></option>
+                                                                
+                                                       <%}%>
+                                          
+                                                <%}%>
+                                            </select>
+                                        </td>
+           
+                                         
+                                        
                                         <input type="hidden" name="index" value="<%=i%>"/>
                                         <td><input class="btn btn-success" type="submit" value="Salvar" name="salvar"</td>
                                         </form>
