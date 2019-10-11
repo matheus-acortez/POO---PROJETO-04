@@ -9,7 +9,7 @@
     <div class="col-md-12">
         <a class="btn btn-info" href="../home.jsp" role="button">HOME</a>
         <a class="btn btn-info" href="bandas/incluir.jsp" role="button">BANDAS</a>
-        <a class="btn btn-info" href="discos.jsp" role="button">DISCOS</a>
-        <a class="btn btn-info" href="musicas.jsp" role="button">MÚSICAS</a>
+        <a class="btn btn-info" href="#" role="button">DISCOS</a>
+        <a class="btn btn-info" href="musicas/musica.jsp" role="button">MÚSICAS</a>
      </div>
  </div>
