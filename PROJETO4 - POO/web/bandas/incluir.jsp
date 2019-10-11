@@ -127,8 +127,8 @@
                                     <tr>
                                         <form>
                                         <td><%=i+1%></td>
-                                        <td><input type="text" name="nome"  value="<%=c.getNome()%>"></td>
-                                        <td><input type="text" name="genero" value="<%=c.getGenero()%>"></td>
+                                        <td><input type="text" class="form-control" name="nome"  value="<%=c.getNome()%>"></td>
+                                        <td><input type="text" class="form-control"name="genero" value="<%=c.getGenero()%>"></td>
                                         <input type="hidden" name="index" value="<%=i%>"/>
                                         <td><input class="btn btn-success" type="submit" value="Salvar" name="salvar"</td>
                                         </form>

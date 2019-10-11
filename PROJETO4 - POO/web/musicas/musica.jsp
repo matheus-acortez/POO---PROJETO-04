@@ -140,9 +140,7 @@
                                         <td><%=c.getGenero()%></td>
                                         <td><%=c.getAno()%></td>
                                         <td><%=c.getBanda().getNome()%></td>
-                                        
-                                        
-                                                 
+                                            
                                     <td>
                                         <form>
                                             <input type="hidden" name="index" value="<%=i%>"/>
@@ -162,9 +160,9 @@
                                     <tr>
                                         <form>
                                         <td><%=i+1%></td>
-                                        <td><input type="text" name="nome"  value="<%=c.getNome()%>"></td>
-                                        <td><input type="text" name="genero" value="<%=c.getGenero()%>"></td>
-                                        <td><input type="text" name="ano" value="<%=c.getAno()%>"></td>
+                                        <td><input class="form-control" type="text" name="nome"  value="<%=c.getNome()%>"></td>
+                                        <td><input class="form-control" type="text" name="genero" value="<%=c.getGenero()%>"></td>
+                                        <td><input class="form-control" type="text" name="ano" value="<%=c.getAno()%>"></td>
                                  
                                         <td>
                                             <select name="banda" class="custom-select" required>
