@@ -1,0 +1,76 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+<br><br>
+
+<div class="row">
+    <div class="col-lg-6 col-lg-offset-6 text-center">  
+        <h2><span class="ion-minus"></span>Nossa Equipe!<span class="ion-minus"></span></h2>
+    </div> 
+</div>
+
+<div class="row text-center img-mat">
+
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+
+        <img class="rounded-circle" alt="team-photo" src="imagens/matheus.jpg"> 
+        <div class="team-member">
+            <h4>Matheus Cortez</h4>
+        </div>
+
+        <p class="social">
+            <a href="#"><span class="fa fa-linkedin-square"></span></a>
+        </p>
+
+     </div>
+
+     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+         <img class="rounded-circle" alt="team-photo" src="imagens/camila.jpg">
+        <div class="team-member">
+            <h4>Camila Voss</h4>
+        </div>
+
+        <p class="social">
+            <a href="#"><span class="fa fa-linkedin-square"></span></a>
+        </p>
+        </div>
+
+     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+
+        <img class="rounded-circle" alt="team-photo" src="imagens/romario.jpeg"> 
+        <div class="team-member">
+            <h4>José Romário Peixoto</h4>
+        </div>
+
+        <p class="social">
+            <a href="#"><span class="fa fa-linkedin-square"></span></a>
+        </p>
+
+     </div>
+    <div class="row secondline">
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+            <img class="rounded-circle" alt="team-photo" src="imagens/daniel.jpg"> 
+        <div class="team-member">
+            <h4>Daniel Barbosa</h4>
+        </div>
+
+        <p class="social">
+            <a href="#"><span class="fa fa-linkedin-square"></span></a>
+        </p>
+        </div>
+        
+        <div class="row gabriel">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 photo">
+                <img class="rounded-circle" alt="team-photo" src="imagens/gabriel.jpg"> 
+            <div class="team-member">
+                <h4>Gabriel Pietro</h4>
+            </div>
+        </div>
+
+        <p class="social">
+            <a href="#"><span class="fa fa-linkedin-square"></span></a>
+        </p>
+        </div>
+        
+    </div>
+    
+</div>
