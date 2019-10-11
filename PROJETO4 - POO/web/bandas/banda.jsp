@@ -79,7 +79,7 @@
                     for (int i=0; i<Db.getBanda().size(); i++){%>
                         <%Banda c= Db.getBanda().get(i);%>
                 <tr>
-                    <td><%=i%></td>
+                    <td><%=i+1%></td>
                     <td><%=c.getNome()%></td>
                     <td><%=c.getGenero()%></td>
                     <td>
