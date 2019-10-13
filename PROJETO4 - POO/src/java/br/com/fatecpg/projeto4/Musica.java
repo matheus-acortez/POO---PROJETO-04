@@ -9,17 +9,7 @@ public class Musica {
     private String ano;
     private Banda banda;
     
-    
-    
-    public void setAno(String ano) {
-        this.ano = ano;
-    }
-
-    public String getAno() {
-        return ano;
-    }
-   
-    public Musica(String nome, String genero, String ano, Banda banda) {
+     public Musica(String nome, String genero, String ano, Banda banda) {
         this.nome = nome;
         this.genero = genero;
         this.ano = ano;
@@ -40,6 +30,14 @@ public class Musica {
 
     public void setGenero(String genero) {
         this.genero = genero;
+    }
+    
+     public void setAno(String ano) {
+        this.ano = ano;
+    }
+
+    public String getAno() {
+        return ano;
     }
     
      public Banda getBanda() {
