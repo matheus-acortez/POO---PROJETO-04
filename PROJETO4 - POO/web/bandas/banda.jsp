@@ -96,7 +96,10 @@
                         <%Banda c= Db.getBanda().get(i);%>
                 <tr>
                     <td><%=i+1%></td>
-                    <td><%=c.getNome()%></td>
+                    <td><a class="btn btn-info" href="detalhes.jsp?i=<%=i%> ">
+                        <%=c.getNome()%>
+                        </a>
+                    </td>
                     <td><%=c.getGenero()%></td>
                     <td><%=c.getIntegrantes()%></td>
                     <td><%=c.getDiscos()%></td>
@@ -123,7 +126,9 @@
                                     <!-- Aqui é somente a exibição dos valores, retornando o valor atual do atributo. -->
                                     <tr>
                                         <td><%=i+1%></td>
-                                        <td><%=c.getNome()%></td>
+                                        <td>
+                                            <%=c.getNome()%>
+                                        </td>
                                         <td><%=c.getGenero()%></td>
                                         <td><%=c.getIntegrantes()%></td>
                                         <td><%=c.getDiscos()%></td>

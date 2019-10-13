@@ -27,7 +27,7 @@
                         String genero = request.getParameter("genero");
                         String ano = request.getParameter("ano");
                         String banda = request.getParameter("banda");
-                        Banda b = new Banda(banda, "", "");
+                        Banda b = new Banda(banda, "","", "");
                         Db.getMusica().add(new Musica(nome, genero, ano, b));
                         response.sendRedirect(request.getRequestURI());    
                         
@@ -43,7 +43,7 @@
                         String genero = request.getParameter("genero");
                         String ano = request.getParameter("ano");
                         String banda = request.getParameter("banda");
-                        Banda c = new Banda(banda, "", "");
+                        Banda c = new Banda(banda, "","", "");
                         Db.getMusica().set(index, new Musica(nome, genero, ano, c));
                         response.sendRedirect(request.getRequestURI()); 
                     
