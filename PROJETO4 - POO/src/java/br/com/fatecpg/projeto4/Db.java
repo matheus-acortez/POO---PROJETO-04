@@ -8,9 +8,9 @@ public class Db {
      public static ArrayList<Banda> getBanda(){
         if (banda == null){
             banda = new ArrayList<>();
-            banda.add(new Banda("Linkin Park", "Rock", " Chester Bennington, Mike Shinoda, Joe Hahn, ...","Estados Unidos"));
+            banda.add(new Banda("Linkin Park", "Rock", " Chester Bennington, Mike Shinoda, Joe Hahn, Brad Delson, Rob Bourdon, Dave Farrell, Mark Wakefield, Kyle Christener, Scott Koziol","Estados Unidos"));
             banda.add(new Banda("Pink Floyd", "Rock", "Roger Waters, David Gilmour, Syd Barrett, Richard Wright, Nick Mason, Bob Klose","Estados Unidos"));
-            banda.add(new Banda("Legiao Urbana", "MPB", " Renato Russo, Dado Villa-Lobos, Marcelo Bonfá,.. ","Brasil"));
+            banda.add(new Banda("Legiao Urbana", "MPB", " Renato Russo, Dado Villa-Lobos, Marcelo Bonfá, Renato Rocha, André Frateschi, Ico Ouro-Preto, Paulo Paulista, Eduardo Paraná ","Brasil"));
           
         }
         return banda;
