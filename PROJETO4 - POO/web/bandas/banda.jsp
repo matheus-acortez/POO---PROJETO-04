@@ -23,9 +23,9 @@
                  if (request.getParameter("cadastro") != null) {
                         String nome = request.getParameter("nome");
                         String genero = request.getParameter("genero");
-                        String integrantes = request.getParameter("integrantes");
-                        String pais  = request.getParameter("pais");
-                        Db.getBanda().add(new Banda(nome, genero, integrantes, pais));
+                        String pais = request.getParameter("pais");
+                        String ano = request.getParameter("ano");
+                        Db.getBanda().add(new Banda(nome, genero, pais, ano));
                         response.sendRedirect(request.getRequestURI());    
                         
                     }else if (request.getParameter("remover") !=null){
@@ -37,9 +37,9 @@
                         int index = Integer.parseInt(request.getParameter("index"));
                         String nome = request.getParameter("nome");
                         String genero = request.getParameter("genero");
-                        String integrantes = request.getParameter("integrantes");
                         String pais = request.getParameter("pais");
-                        Db.getBanda().set(index, new Banda(nome, genero, integrantes, pais));
+                        String ano = request.getParameter("ano");
+                        Db.getBanda().set(index, new Banda(nome, genero, pais, ano));
                         response.sendRedirect(request.getRequestURI()); 
                     
                     
@@ -53,25 +53,25 @@
         <div class="form-group row">
           <label for="nomeLabel" class="col-sm-2 col-form-label">Nome</label>
           <div class="col-sm-3">
-            <input type="text" name="nome" class="form-control" id="nomeLabel" placeholder="Nome da Banda ou Artista">
+            <input type="text" name="nome" class="form-control" id="nomeLabel" placeholder="Nome da banda">
           </div>
         </div>
         <div class="form-group row">
           <label for="generoLabel" class="col-sm-2 col-form-label">Gênero</label>
           <div class="col-sm-3">
-            <input type="text" name="genero" class="form-control" id="generoLabel" placeholder="Gênero da Banda ou Artista">
-          </div>
-           </div>
-         <div class="form-group row">
-          <label for="generoLabel" class="col-sm-2 col-form-label">Integrantes</label>
-          <div class="col-sm-3">
-            <input type="text" name="integrantes" class="form-control" id="generoLabel" placeholder="Nome dos Integrantes">
+            <input type="text" name="genero" class="form-control" id="generoLabel" placeholder="Ex: Rock, MPB">
           </div>
            </div>
             <div class="form-group row">
           <label for="generoLabel" class="col-sm-2 col-form-label">País</label>
           <div class="col-sm-3">
-            <input type="text" name="pais" class="form-control" id="generoLabel" placeholder="País da Banda ou Artista">
+            <input type="text" name="pais" class="form-control" id="generoLabel" placeholder="País de origem">
+          </div>
+           </div>
+            <div class="form-group row">
+          <label for="generoLabel" class="col-sm-2 col-form-label">Ano</label>
+          <div class="col-sm-3">
+            <input type="text" name="ano" class="form-control" id="generoLabel" placeholder="Ano de lançamento">
           </div>
            </div>
         <input class="btn btn-info" name="cadastro" type="submit" value="Cadastrar">
@@ -85,8 +85,8 @@
                     <th scope="col">Índice</th>
                     <th scope="col">Nome</th>
                     <th scope="col">Genêro</th>
-                    <th scope="col">Integrantes</th>
-                    <th scope="col">Discos</th>
+                    <th scope="col">País</th>
+                    <th scope="col">Ano</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -96,13 +96,10 @@
                         <%Banda c= Db.getBanda().get(i);%>
                 <tr>
                     <td><%=i+1%></td>
-                    <td><a class="btn btn-info" href="detalhes.jsp?i=<%=i%> ">
-                        <%=c.getNome()%>
-                        </a>
-                    </td>
+                    <td> <%=c.getNome()%>
                     <td><%=c.getGenero()%></td>
-                    <td><%=c.getIntegrantes()%></td>
-                    <td><%=c.getDiscos()%></td>
+                    <td><%=c.getPais()%></td>
+                    <td><%=c.getAno()%></td>
                     <td>
                         <form>
                             <input type="hidden" name="index" value="<%=i%>"/>
@@ -126,12 +123,11 @@
                                     <!-- Aqui é somente a exibição dos valores, retornando o valor atual do atributo. -->
                                     <tr>
                                         <td><%=i+1%></td>
-                                        <td>
-                                            <%=c.getNome()%>
-                                        </td>
+                                        <td><%=c.getNome()%></td>
                                         <td><%=c.getGenero()%></td>
-                                        <td><%=c.getIntegrantes()%></td>
-                                        <td><%=c.getDiscos()%></td>
+                                        <td><%=c.getPais()%></td>
+                                        <td><%=c.getAno()%></td>
+                                     
                                     <td>
                                         <form>
                                             <input type="hidden" name="index" value="<%=i%>"/>
@@ -153,8 +149,8 @@
                                         <td><%=i+1%></td>
                                         <td><input type="text" class="form-control" name="nome"  value="<%=c.getNome()%>"></td>
                                         <td><input type="text" class="form-control"name="genero" value="<%=c.getGenero()%>"></td>
-                                        <td><input type="text" class="form-control" name="integrantes"  value="<%=c.getIntegrantes()%>"></td>
-                                        <td><%=c.getDiscos()%></td>
+                                        <td><input type="text" class="form-control"name="pais" value="<%=c.getPais()%>"></td>
+                                        <td><input type="text" class="form-control"name="ano" value="<%=c.getAno()%>"></td>
                                         <input type="hidden" name="index" value="<%=i%>"/>
                                         <td><input class="btn btn-success" type="submit" value="Salvar" name="salvar"</td>
                                         </form>

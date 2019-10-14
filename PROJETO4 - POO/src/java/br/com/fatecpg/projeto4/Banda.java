@@ -7,15 +7,14 @@ public class Banda {
     
     private String nome;
     private String genero;
-    private String integrantes;
     private String pais;
-    private ArrayList<Discos> discos = new ArrayList<>();
+    private String ano; 
     
-    public Banda(String nome, String genero, String integrantes, String pais) {
+    public Banda(String nome, String genero, String pais, String ano) {
         this.nome = nome;
         this.genero = genero;
-        this.integrantes = integrantes;
         this.pais = pais;
+        this.ano = ano;
         
     }
 
@@ -43,21 +42,15 @@ public class Banda {
          this.pais = pais;
      }
     
-     public String getIntegrantes() {
-        return integrantes;
+     public String getAno(){
+        return ano;
     }
+    
+    public void setAno(String ano){
+         this.ano = ano;
+     }
 
-    public void setIntegrantes(String integrantes) {
-        this.integrantes = integrantes;
-    }
-
-    public ArrayList<Discos> getDiscos() {
-        return discos;
-    }
-
-    public void setDiscos(ArrayList<Discos> discos) {
-        this.discos = discos;
-    }
+   
     
     
 }
