@@ -32,6 +32,8 @@
                 <th scope="col">Genêro</th>
                 <th scope="col">Pais</th>
                 <th scope="col">Ano</th>
+               
+                
              
               </tr>
             </thead>
@@ -46,6 +48,7 @@
             <td><%=banda.getGenero()%></td>
             <td><%=banda.getPais()%></td>
             <td><%=banda.getAno()%></td>
+            
 
         </tr>
         <%}%>
@@ -69,18 +72,20 @@
                 <th scope="col">Nome</th>
                 <th scope="col">Genêro</th>
                 <th scope="col">Ano</th>
+                <th scope="col">Banda</th>
               </tr>
             </thead>
             <tbody>
         </tbody>
 
-        <%for (Musica musica : Db.getMusica()){%>
-        
+        <%for (int i=0; i<Db.getMusica().size(); i++){%>
+            <%Musica c= Db.getMusica().get(i);%>
         <tr>
-            <td><%=Db.getMusica().indexOf(musica)%></td>
-            <td><%=musica.getNome()%></td>
-            <td><%=musica.getGenero()%></td>
-            <td><%=musica.getAno()%></td>
+            <td><%=i+1%></td>
+            <td><%=c.getNome()%></td>
+            <td><%=c.getGenero()%></td>
+            <td><%=c.getAno()%></td>
+            <td><%=c.getBanda().getNome()%></td>
 
         </tr>
         <%}%>
