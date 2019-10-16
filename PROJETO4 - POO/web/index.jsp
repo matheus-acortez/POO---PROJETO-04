@@ -9,7 +9,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="estilo.css">
-        <title>JSP Page</title>
+        <title>Cadastro de Músicas, bandas e discos.</title>
     </head>
     <body>
         <div class='container'>
@@ -40,14 +40,14 @@
             <tbody>
         </tbody>
 
-        <%for (Banda banda : Db.getBanda()){%>
-        
+        <%for (int i=0; i<Db.getBanda().size(); i++){%>
+            <%Banda c= Db.getBanda().get(i);%>
         <tr>
-            <td><%=Db.getBanda().indexOf(banda)%></td>
-            <td><%=banda.getNome()%></td>
-            <td><%=banda.getGenero()%></td>
-            <td><%=banda.getPais()%></td>
-            <td><%=banda.getAno()%></td>
+            <td><%=i+1%></td>
+            <td> <%=c.getNome()%>
+            <td><%=c.getGenero()%></td>
+            <td><%=c.getPais()%></td>
+            <td><%=c.getAno()%></td>
             
 
         </tr>
