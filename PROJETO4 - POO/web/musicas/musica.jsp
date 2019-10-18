@@ -78,7 +78,7 @@
                     <div class="row form-bandas">
                     <div class="col-sm-12">
                         <select name="banda" class="custom-select" required>
-                            <option selected value="-1">Selecione uma banda</option>
+                            <option>Selecione uma banda</option>
                             <%for (Banda banda : Db.getBanda()) {%>
                             <option value="<%=banda.getNome()%>"><%=banda.getNome()%></option>
                             <%}%>
