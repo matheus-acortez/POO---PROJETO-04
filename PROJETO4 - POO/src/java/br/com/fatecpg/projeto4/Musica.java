@@ -9,7 +9,7 @@ public class Musica {
     private String ano;
     private Banda banda;
     
-     public Musica(String nome, String genero, String ano, Banda banda) {
+    public Musica(String nome, String genero, String ano, Banda banda) {
         this.nome = nome;
         this.genero = genero;
         this.ano = ano;
