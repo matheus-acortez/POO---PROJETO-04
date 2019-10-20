@@ -1,8 +1,9 @@
+<%@page import="java.net.URL"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="br.com.fatecpg.projeto4.Db"%>
+<%@page import="br.com.fatecpg.projeto4.Banda"%>
 <%-- 
-    Document   : discos
-    Created on : 08/10/2019, 11:24:32
-    Author     : suporte03
---%>
+   
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
