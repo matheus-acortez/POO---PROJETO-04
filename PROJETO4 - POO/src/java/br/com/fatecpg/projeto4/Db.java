@@ -29,6 +29,24 @@ public class Db {
         }
      return musica;
     }
+    
+    private static ArrayList<Discos> discos;
+        public static ArrayList<Discos> getDiscos(){
+        if (discos == null){
+            discos = new ArrayList<>();
+            Banda b = new Banda("Linkin Park", "", "", "");
+            Musica m = new Musica("In The End", "", "", b);
+            discos.add(new Discos("Meteora", "2003", "Rock", m, b));
+            b = new Banda("Pink Floyd", "", "", "");
+            m = new Musica("Money", "", "", b);
+            discos.add(new Discos("Dark Side of The Moon", "1973", "Rock", m, b));
+            b = new Banda("Legiao Urbana", "", "", "");
+            m = new Musica("Tempo Perdido", "", "", b);
+            discos.add(new Discos("Disco", "1986", "MPB", m, b));
+            
+        }
+     return discos;
+    }
      
 
 }
