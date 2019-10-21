@@ -131,8 +131,8 @@
                 </tr>
                 <%}} 
                 else {
-                    for (int i=0; i<Db.getMusica().size(); i++){
-                              Musica c = Db.getMusica().get(i);
+                    for (int i=0; i<Db.getDiscos().size(); i++){
+                              Discos c = Db.getDiscos().get(i);
                                 if(i != Integer.parseInt(request.getParameter("index"))){%>
                                     <!-- Aqui é somente a exibição dos valores, retornando o valor atual do atributo. -->
                                     <tr>
