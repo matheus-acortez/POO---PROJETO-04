@@ -44,7 +44,6 @@
                         String genero = request.getParameter("genero");
                         String ano = request.getParameter("ano");
                         String banda = request.getParameter("banda");
-                        String musica = request.getParameter("musica");
                         Banda b = new Banda(banda, "","", "");
                         Db.getDiscos().set(index, new Discos (nome, genero, ano, b));
                         response.sendRedirect(request.getRequestURI()); 

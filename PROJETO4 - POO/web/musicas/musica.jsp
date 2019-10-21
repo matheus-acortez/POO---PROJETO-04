@@ -46,7 +46,7 @@
                         String genero = request.getParameter("genero");
                         String ano = request.getParameter("ano");
                         String banda = request.getParameter("banda");
-                        String disco = request.getParameter("banda");
+                        String disco = request.getParameter("disco");
                         Banda b = new Banda(banda, "","", "");
                         Discos c = new Discos(disco, "","", b);
                         Db.getMusica().set(index, new Musica(nome, genero, ano, b, c));
@@ -160,6 +160,7 @@
                                         <td><%=c.getGenero()%></td>
                                         <td><%=c.getAno()%></td>
                                         <td><%=c.getBanda().getNome()%></td>
+                                        <td><%=c.getDiscos().getNome()%></td>
                                             
                                     <td>
                                         <form>
@@ -198,6 +199,22 @@
                                                 <%}%>
                                             </select>
                                         </td>
+                                        <td>
+                                            <select name="disco" class="custom-select" required>
+                                                <option selected value="-1">Selecione um disco</option>
+                                                <%for (Discos disco : Db.getDiscos()){ 
+                                                       if (disco.getNome().equals(c.getDiscos().getNome())){%>
+                                                           <option selected="selected" value="<%=disco.getNome()%>"><%=disco.getNome()%></option>
+                                                       <%}else{%>
+                                                            <option value="<%=disco.getNome()%>"><%=disco.getNome()%></option>
+                                                                
+                                                       <%}%>
+                                          
+                                                <%}%>
+                                            </select>
+                                        </td>
+                                        
+                                        
            
                                          
                                         
