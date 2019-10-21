@@ -36,7 +36,7 @@ public class Discos {
     public String getGenero() {
         return genero;
     }
-
+    
     public void setNome(String nome) {
         this.nome = nome;
     }

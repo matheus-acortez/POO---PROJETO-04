@@ -1,6 +1,7 @@
 <%@page import="br.com.fatecpg.projeto4.Musica"%>
 <%@page import="br.com.fatecpg.projeto4.Db"%>
 <%@page import="br.com.fatecpg.projeto4.Banda"%>
+<%@page import="br.com.fatecpg.projeto4.Discos"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -79,6 +80,42 @@
 
                         <%for (int i=0; i<Db.getMusica().size(); i++){%>
                             <%Musica c= Db.getMusica().get(i);%>
+                        <tr>
+                            <td><%=i+1%></td>
+                            <td><%=c.getNome()%></td>
+                            <td><%=c.getGenero()%></td>
+                            <td><%=c.getAno()%></td>
+                            <td><%=c.getBanda().getNome()%></td>
+
+                        </tr>
+                        <%}%>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <h5 class="mb-0 text-secondary">Discos
+                    <span class="float-right"><%=Db.getDiscos().size()%></span>
+                </h5>
+            </div>
+        </div>
+        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+            <div class="card-body">
+                <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Genêro</th>
+                        <th scope="col">Ano</th>
+                        <th scope="col">Banda</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+
+                        <%for (int i=0; i<Db.getDiscos().size(); i++){%>
+                            <%Discos c= Db.getDiscos().get(i);%>
                         <tr>
                             <td><%=i+1%></td>
                             <td><%=c.getNome()%></td>
