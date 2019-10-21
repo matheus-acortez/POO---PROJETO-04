@@ -27,8 +27,7 @@
                         String nome = request.getParameter("nome");
                         String genero = request.getParameter("genero");
                         String ano = request.getParameter("ano");
-                        String banda = request.getParameter("banda");
-                        String musica = request.getParameter("musica");
+                        String banda = request.getParameter("banda");                        
                         Banda b = new Banda(banda, "","", "");
                         Db.getMusica().add(new Musica(nome, genero, ano, b));
                         response.sendRedirect(request.getRequestURI());    
@@ -77,13 +76,13 @@
           </div>
            </div>
             <div class="form-group row">
-                    <label for="nome" class="col-sm-1 col-form-label"></label>
+                    <label for="nome" class="col-sm-1 col-form-label">Banda</label>
                     <div class="row form-bandas">
                     <div class="col-sm-12">
                         <select name="disco" class="custom-select" required>
-                            <option>Selecione um disco</option>
-                            <%for (Discos discos : Db.getDiscos()) {%>
-                            <option value="<%=discos.getNome()%>"><%=discos.getNome()%></option>
+                            <option>Selecione uma banda</option>
+                            <%for (Banda banda : Db.getBanda()) {%>
+                            <option value="<%=banda.getNome()%>"><%=banda.getNome()%></option>
                             <%}%>
                         </select>
                     </div>
@@ -94,7 +93,7 @@
     </form>      
             <div class="row form-band">
             <div class="col-sm-12 col-md-12">
-                <h4>Lista de Músicas</h4>
+                <h4>Lista de Discos</h4>
                 <table class="table table-striped table-dark">
                 <thead>
                   <tr>
