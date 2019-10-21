@@ -15,15 +15,14 @@ public class Discos {
     private String nome;
     private String ano;
     private String genero;
-    private Musica musica;
     private Banda banda;
 
-    public Discos(String nome, String ano, String genero, Musica musica, Banda banda) {
+    public Discos(String nome, String ano, String genero, Banda banda) {
         this.nome = nome;
         this.ano = ano;
         this.genero = genero;
-        this.musica = musica;
         this.banda = banda;
+        
     }
 
     public String getNome() {
@@ -38,14 +37,6 @@ public class Discos {
         return genero;
     }
 
-    public Musica getMusica() {
-        return musica;
-    }
-
-    public Banda getBanda() {
-        return banda;
-    }
-
     public void setNome(String nome) {
         this.nome = nome;
     }
@@ -57,12 +48,10 @@ public class Discos {
     public void setGenero(String genero) {
         this.genero = genero;
     }
-
-    public void setMusica(Musica musica) {
-        this.musica = musica;
+    
+     public Banda getBanda() {
+        return banda;
     }
 
-    public void setBanda(Banda banda) {
-        this.banda = banda;
-    }
+
 }

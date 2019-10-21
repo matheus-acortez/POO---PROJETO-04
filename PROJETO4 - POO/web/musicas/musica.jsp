@@ -3,6 +3,7 @@
 <%@page import="br.com.fatecpg.projeto4.Db"%>
 <%@page import="br.com.fatecpg.projeto4.Banda"%>
 <%@page import="br.com.fatecpg.projeto4.Musica"%>
+<%@page import="br.com.fatecpg.projeto4.Discos"%>
 
 <!DOCTYPE html>
 <html>
@@ -27,8 +28,10 @@
                         String genero = request.getParameter("genero");
                         String ano = request.getParameter("ano");
                         String banda = request.getParameter("banda");
+                        String disco = request.getParameter("disco");
                         Banda b = new Banda(banda, "","", "");
-                        Db.getMusica().add(new Musica(nome, genero, ano, b));
+                        Discos c = new Discos(disco, "","", b);
+                        Db.getMusica().add(new Musica(nome, genero, ano, b, c));
                         response.sendRedirect(request.getRequestURI());    
                         
                     }else if (request.getParameter("remover") !=null){
@@ -43,8 +46,10 @@
                         String genero = request.getParameter("genero");
                         String ano = request.getParameter("ano");
                         String banda = request.getParameter("banda");
+                        String disco = request.getParameter("banda");
                         Banda b = new Banda(banda, "","", "");
-                        Db.getMusica().set(index, new Musica(nome, genero, ano, b));
+                        Discos c = new Discos(disco, "","", b);
+                        Db.getMusica().set(index, new Musica(nome, genero, ano, b, c));
                         response.sendRedirect(request.getRequestURI()); 
                     
                     
@@ -86,6 +91,19 @@
                     </div>
                     </div>
             </div>
+             <div class="form-group row">
+                    <label for="nome" class="col-sm-1 col-form-label">Disco</label>
+                    <div class="row form-bandas">
+                    <div class="col-sm-12">
+                        <select name="disco" class="custom-select" required>
+                            <option>Selecione um disco</option>
+                            <%for (Discos disco : Db.getDiscos()) {%>
+                            <option value="<%=disco.getNome()%>"><%=disco.getNome()%></option>
+                            <%}%>
+                        </select>
+                    </div>
+                    </div>
+            </div>
                 
         <input class="btn btn-info" name="cadastro" type="submit" value="Cadastrar">
     </form>      
@@ -100,6 +118,7 @@
                     <th scope="col">Genêro</th>
                     <th scope="col">Ano</th>
                     <th scope="col">Banda</th>
+                    <th scope="col">Disco</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -113,6 +132,7 @@
                     <td><%=c.getGenero()%></td>
                     <td><%=c.getAno()%></td>
                     <td><%=c.getBanda().getNome()%></td>
+                    <td><%=c.getDiscos().getNome()%></td>
                     <td>
                         <form>
                             <input type="hidden" name="index" value="<%=i%>"/>

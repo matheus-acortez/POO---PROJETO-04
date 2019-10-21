@@ -20,11 +20,14 @@ public class Db {
         if (musica == null){
             musica = new ArrayList<>();
             Banda b = new Banda("Linkin Park", "", "", "");
-            musica.add(new Musica("In the end", "Rock", "2007", b));
+            Discos c = new Discos ("Meteora", "", "", b);
+            musica.add(new Musica("In the end", "Rock", "2007", b, c));
             b = new Banda("Pink Floyd", "", "", "");
-            musica.add(new Musica("Money", "Rock", "2008", b));
+            c = new Discos ("Dark Side of the Moon", "", "", b);
+            musica.add(new Musica("Money", "Rock", "2008", b, c));
             b = new Banda("Legiao Urbana", "", "", "");
-            musica.add(new Musica("Tempo Perdido", "MPB", "2008", b));
+            c = new Discos("As Quatro Estações", "", "", b);
+            musica.add(new Musica("Tempo Perdido", "MPB", "2008", b, c));
             
         }
      return musica;
@@ -35,14 +38,11 @@ public class Db {
         if (discos == null){
             discos = new ArrayList<>();
             Banda b = new Banda("Linkin Park", "", "", "");
-            Musica m = new Musica("In The End", "", "", b);
-            discos.add(new Discos("Meteora", "2003", "Rock", m, b));
+            discos.add(new Discos("Meteora", "2003", "Rock", b));
             b = new Banda("Pink Floyd", "", "", "");
-            m = new Musica("Money", "", "", b);
-            discos.add(new Discos("Dark Side of The Moon", "1973", "Rock", m, b));
-            b = new Banda("Legiao Urbana", "", "", "");
-            m = new Musica("Tempo Perdido", "", "", b);
-            discos.add(new Discos("Disco", "1986", "MPB", m, b));
+            discos.add(new Discos("Dark Side of The Moon", "1973", "Rock", b));
+            b = new Banda("Linkin Park", "", "", "");
+            discos.add(new Discos("As Quatro Estações", "1994", "MPB", b));
             
         }
      return discos;

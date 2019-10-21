@@ -29,12 +29,12 @@
                         String ano = request.getParameter("ano");
                         String banda = request.getParameter("banda");                        
                         Banda b = new Banda(banda, "","", "");
-                        Db.getMusica().add(new Musica(nome, genero, ano, b));
+                        Db.getDiscos().add(new Discos(nome, genero, ano, b));
                         response.sendRedirect(request.getRequestURI());    
                         
                     }else if (request.getParameter("remover") !=null){
                          int i = Integer.parseInt(request.getParameter("index"));
-                         Db.getMusica().remove(i);
+                         Db.getDiscos().remove(i);
                          response.sendRedirect(request.getRequestURI());   
                          
                      } else if (request.getParameter("salvar") != null) { 
@@ -46,7 +46,7 @@
                         String banda = request.getParameter("banda");
                         String musica = request.getParameter("musica");
                         Banda b = new Banda(banda, "","", "");
-                        Db.getMusica().set(index, new Musica(nome, genero, ano, b));
+                        Db.getDiscos().set(index, new Discos (nome, genero, ano, b));
                         response.sendRedirect(request.getRequestURI()); 
                     
                     
@@ -107,8 +107,8 @@
                 <tbody>
                 </tbody>
                 <%if(request.getParameter("alterar") == null) {
-                    for (int i=0; i<Db.getMusica().size(); i++){%>
-                        <%Musica c= Db.getMusica().get(i);%>
+                    for (int i=0; i<Db.getDiscos().size(); i++){%>
+                        <%Discos c= Db.getDiscos().get(i);%>
                 <tr>
                     <td><%=i+1%></td>
                     <td><%=c.getNome()%></td>
