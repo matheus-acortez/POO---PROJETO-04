@@ -48,7 +48,7 @@
                         String banda = request.getParameter("banda");
                         String disco = request.getParameter("disco");
                         Banda b = new Banda(banda, "","", "");
-                        Discos c = new Discos(disco, "","", );
+                        Discos c = new Discos(disco, "","", b);
                         Db.getMusica().set(index, new Musica(nome, genero, ano, b, c));
                         response.sendRedirect(request.getRequestURI()); 
                     
